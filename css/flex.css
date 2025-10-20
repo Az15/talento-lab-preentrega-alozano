@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: greenyellow;
+}
+
+.prod-container {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.prod-container > div {
+  border: 1px solid white;
+}
+
+@media only screen and (320px <= width <= 768px) {
+  .prod-container {
+    flex-direction: column;
+  }
+}
