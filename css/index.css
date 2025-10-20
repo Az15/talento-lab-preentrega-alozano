@@ -12,7 +12,7 @@
 /* header */
 .logo-container {
   /* text-align: center; */
-  background-color: #f2f7b0;
+  background-color: pink;
   display: flex;
   align-items: center; 
   padding: 8px 16px; 
@@ -26,13 +26,14 @@
   border: 2px solid #a2b2e9;
 }
 
-.logo-text {
+/* Cambie de opinion con el texto y bueno lo dejo comentado por si lo uso para otra cosa.-----------------------------------------------------------------------*/
+/* .logo-text {
   font-family: Montserrat, Verdana, Tahoma, sans-serif;
   font-size: clamp(16px, 3vw , 24px); 
-  font-weight: 500;
+  font-weight: 400;
   color: #dd8cc9; 
   
-}
+} */
 
 .menu {
   background-color: #f799d0;
@@ -51,29 +52,33 @@
 .link {
   text-decoration: none;
   color: white;
-  font-size: clamp(20px, 8vw , 50px);
+  font-size: clamp(18px, 8vw , 50px);
 }
 
 /*-----------------------------------------------------------------------*/
 
-/* Bienvenida */
 .bienvenida {
-  /* CAMBIOS CLAVE PARA LA IMAGEN DE FONDO */
-  background-image: url('img/imagen_de_bienvenida.png'); 
   background-color: #f2f7b0; 
-  background-size: cover; 
-  background-repeat: no-repeat;
-  background-position: center; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
   min-height: 400px; 
-  height: 600px;
-
   padding: 5px; 
-  
-  /* Eliminamos las propiedades de texto que ya no se necesitan */
   font-family: Montserrat, Verdana, Tahoma, sans-serif;
-  font-size: 0; /* Ocultamos el tamaño de fuente si hubiera algún texto residual */
 }
-
+.bienvenida-content {
+    max-width: 1000px; 
+    width: 90%; 
+    height: auto; 
+    text-align: center; 
+}
+.imagen-bienvenida {
+    display: block; 
+    max-width: 100%;
+    height: auto;     
+    margin: 0 auto; 
+    border-radius: 12px; 
+}
 
 /*-----------------------------------------------------------------------*/
 
