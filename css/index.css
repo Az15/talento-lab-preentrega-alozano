@@ -10,11 +10,17 @@
 
 /*-----------------------------------------------------------------------*/
 /* header */
-
+  .main{
+    background-color: mistyrose;
+  }
 
 .menu {
   background-color: #f799d0;
   padding: 3px 0; 
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  z-index: 1000;
 }
 
 .lista-links {
@@ -63,6 +69,7 @@
 /*-----------------------------------------------------------------------*/
 
 .bienvenida {
+  padding-top: 200px;
   background-color: #f2f7b0; 
   display: flex;
   justify-content: center; 
@@ -92,7 +99,9 @@
 .productos {
   font-family: Montserrat, Verdana, Tahoma, sans-serif;
 }
-
+.item-tit{
+  color: coral;
+}
 .tit-prod {
   text-align: center;
   color:lightcoral;
@@ -108,9 +117,10 @@
 }
 
 .prod-item {
-  border: 1px solid pink;
-  border-radius: 8px;
-  padding: 8px;
+          border: 1px solid pink;
+          border-radius: 8px;
+          padding: 8px;
+          text-align: center; 
 }
 
 .item-tit {
@@ -119,8 +129,11 @@
 }
 
 .imagen-card {
-  width: 320px;
-  height: 320px;
+         width: auto;
+          max-width: 250px;
+          max-height: 320px;
+          height: auto;
+          border-radius: 5%; 
 }
 
 .precio {
@@ -159,8 +172,9 @@
 /* Formulario / Contacto */
 
 .contacto {
-  background-color: bisque;
-  color: #e9ebf1;
+ 
+  background-color: mistyrose;
+  color: pink;
 }
 
 .tit-contacto {
@@ -182,16 +196,16 @@
 }
 
 .formulario {
-  background-color: #fff;
+  background-color:mintcream;
   font-size: 16px;
-  border: 2px solid darkblue;
+  border: 2px solid pink;
   border-radius: 8px;
   width: 300px;
   margin: auto;
 }
 
 input[type=text],[type=email],textarea {
-  color: blue;
+  color: pink;
   border: none;
   font-size: 20px;
   font-weight: 400;
@@ -199,17 +213,17 @@ input[type=text],[type=email],textarea {
 
 input[type=text] {
   margin: 32px;
-  border-bottom: 1px solid darkblue ;
+  border-bottom: 1px solid pink ;
 }
 
 input[type=email] {
   margin-bottom: 32px;
-  border-bottom: 1px solid darkblue ;
+  border-bottom: 1px solid pink ;
 }
 
 .mensaje {
   margin-bottom: 32px;
-  border: 1px solid darkblue ;
+  border: 1px solid pink ;
   padding: 2px;
   font-family: Tahoma, Verdana, sans-serif;
 }
@@ -217,14 +231,14 @@ input[type=email] {
 .btn-enviar {
   margin-bottom: 32px;
   padding: 8px;
-  background-color: #1845cb;
-  color: #c7cfe5;
+  background-color:#ffccf0;
+  color: hotpink;
   font-size: 16px;
   border-radius: 8px;
 }
 
 .btn-enviar:hover {
-  background-color: #04164b;
+  background-color: pink;
 }
 
 
@@ -232,7 +246,7 @@ input[type=email] {
 
 /* Footer */
 .footer {
-  background-color: #056c92;
+  background-color: mistyrose;
   color: azure;
   display: flex;
   flex-direction: row;
@@ -281,9 +295,7 @@ input[type=email] {
 
 @media only screen and (320px <= width <= 768px) {
 
-  .main{
-    background-color: mistyrose;
-  }
+
   /* ------------- Footer ---------------------------------- */
   .footer {
     flex-direction: column;
@@ -383,6 +395,7 @@ input[type=email] {
           border-radius: 8px;
           padding: 8px;
           text-align: center; 
+
         }
         .item-tit{
           color: coral;
@@ -405,14 +418,33 @@ input[type=email] {
     border: 2px solid #a2b2e9;
 
   }
-}
-
-
+    .bienvenida{
+    padding-top: 60px;
+    
+  }
+  .productos{
+    padding-top: 80px;
+  }
+  .contacto{
+    padding-top: 80px;
+  }
+ }
 
 
 @media only screen and (1024.1px <= width <= 2048px) {
   .menu {
     background-color: #f799d0;
+    
+  }
+  .bienvenida{
+    padding-top: 60px;
+    
+  }
+  .productos{
+    padding-top: 80px;
+  }
+  .contacto{
+    padding-top: 80px;
   }
   .logo-img {
     width: 80px;
