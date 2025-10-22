@@ -196,39 +196,52 @@
 }
 
 .formulario {
-  background-color:mintcream;
-  font-size: 16px;
-  border: 2px solid pink;
-  border-radius: 8px;
-  width: 300px;
-  margin: auto;
+ background-color:mintcream;
+ font-size: 16px;
+ border: 2px solid pink;
+ border-radius: 8px;
+ max-width: 400px; 
+ width: 90%;  
+ margin: 20px auto; 
+ padding: 20px;
 }
 
-input[type=text],[type=email],textarea {
-  color: pink;
-  border: none;
-  font-size: 20px;
-  font-weight: 400;
+input[type=text],
+input[type=email],
+textarea {
+ color: pink;
+ border: none; /* Esto se mantiene para tu estilo de solo border-bottom */
+ font-size: 20px;
+ font-weight: 400;
+  /* 💡 Añadir estas líneas para que ocupen todo el ancho y se vea el padding */
+  width: 100%; 
+  padding: 10px 0; /* Padding vertical, pero CERO padding horizontal */
+  box-sizing: border-box; /* Aunque es global, lo reafirmamos */
 }
 
 input[type=text] {
-  margin: 32px;
-  border-bottom: 1px solid pink ;
+ /* ELIMINAR margin: 32px; */
+ margin: 16px 0; /* Solo margen vertical para separar */
+ border-bottom: 1px solid pink ;
 }
 
 input[type=email] {
-  margin-bottom: 32px;
-  border-bottom: 1px solid pink ;
+ margin-bottom: 16px; /* Solo margen vertical */
+ border-bottom: 1px solid pink ;
 }
 
 .mensaje {
-  margin-bottom: 32px;
-  border: 1px solid pink ;
-  padding: 2px;
-  font-family: Tahoma, Verdana, sans-serif;
+ margin-bottom: 32px;
+ border: 1px solid pink ;
+ padding: 10px; 
+ font-family: Tahoma, Verdana, sans-serif;
+  width: 100%; 
 }
 
 .btn-enviar {
+  display: block; /* Para que tome el ancho completo y margin: auto */
+    width: 80%; /* Ocupa la mayoría del ancho del formulario */
+    margin: 32px auto;
   margin-bottom: 32px;
   padding: 8px;
   background-color:#ffccf0;
@@ -241,43 +254,215 @@ input[type=email] {
   background-color: pink;
 }
 
+/*-----------------------------------------------------------------------*/
+/* Comentarios */
+.Reseñas {
+    padding: 40px 20px;
+    background-color: #fce8f4; /* Un rosa muy claro, suave, para la sección */
+    font-family: Montserrat, Verdana, Tahoma, sans-serif;
+    text-align: center; /* Centra el título principal */
+}
+
+.Reseñas h2 {
+    color: #4b0082; /* Título principal en morado */
+    font-size: clamp(24px, 5vw, 36px);
+    margin-bottom: 30px;
+}
+
+/* --- CONTENEDOR PRINCIPAL (Flexbox) --- */
+.reseñas-contenedor {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las columnas se apilen en móvil */
+    justify-content: center;
+    gap: 30px; /* Espacio entre las dos columnas/secciones */
+    max-width: 1200px; /* Limita el ancho máximo del contenedor central */
+    margin: 0 auto;
+}
+
+/* --- ESTILOS DE COLUMNAS (Reseñas Destacadas y Formulario) --- */
+.reseñas-destacadas, .reseñas-formulario {
+    /* Flexbox: Ocupa el 100% en móvil, y cerca del 45% en PC */
+    flex: 1 1 45%; 
+    min-width: 300px; /* Asegura que no se achique demasiado en pantallas medianas */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reseñas-destacadas {
+    background-color: #ffffff; /* Fondo blanco para las tarjetas de reseña */
+    border: 1px solid #ffccf0; /* Borde suave */
+}
+
+.reseñas-formulario {
+    background-color: #ffccf0; /* Fondo rosa claro para el formulario */
+    color: #4b0082; /* Texto en morado oscuro */
+}
+
+/* --- TÍTULOS DE COLUMNAS --- */
+.reseñas-destacadas h3, .reseñas-formulario h3 {
+    color: #a2b2e9; /* Título de columna en azul pastel */
+    font-size: clamp(20px, 4vw, 26px);
+    margin-bottom: 20px;
+}
+
+/* --- ESTILOS DE TARJETAS DE RESEÑA --- */
+.reseña-card {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #f799d0; /* Borde decorativo rosa */
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.calificacion span {
+    color: gold; /* Estrellas en color dorado */
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.reseña-texto {
+    font-style: italic;
+    color: #333;
+    margin: 10px 0;
+}
+
+.reseña-autor {
+    text-align: right;
+    font-weight: bold;
+    color: #4b0082;
+    font-size: 14px;
+}
+
+/* --- ESTILOS DEL FORMULARIO --- */
+.form-reseña {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-grupo {
+    text-align: left;
+}
+
+.form-grupo label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="number"], 
+input[type="text"], 
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #a2b2e9; /* Borde azul suave */
+    border-radius: 8px; /* Borde redondeado */
+    box-sizing: border-box; /* Importante para que el padding no desborde el ancho */
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #f799d0; /* Borde rosa fuerte al enfocarse */
+    outline: none;
+}
+
+textarea {
+    resize: vertical; /* Permite redimensionar solo verticalmente */
+}
+
+/* --- ESTILOS DEL BOTÓN --- */
+.boton-enviar {
+    background-color: #f799d0; /* Fondo rosa fuerte */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.boton-enviar:hover {
+    background-color: #ffccf0; /* Rosa más claro al pasar el mouse */
+    color: #4b0082;
+    transform: translateY(-1px);
+}
+
+
 
 /*-----------------------------------------------------------------------*/
 
 /* Footer */
 .footer {
-  background-color: mistyrose;
-  color: azure;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  text-align: center;
-  padding: 32px 0;
-  gap: 16px 0;
+    background-color: #ffccf0; 
+    color: #4b0082; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; /* Distribuye el espacio entre las columnas */
+    text-align: center; 
+    padding: 30px 20px;
 }
 
-.footer-links {
-  width: 30%;
-  font-size: clamp(16px, 8vw, 32px);
+/* --- ESTILOS DE CADA COLUMNA --- */
+.footer-col {
+    flex: 1 1 300px; 
+    margin: 20px 15px; 
+    max-width: 350px; 
+    text-align: left; 
 }
 
-.footer-ul {
-  list-style-type: none;
-  font-family: 'BBH Sans Bogle', Verdana, Tahoma, sans-serif;
+.footer-col h3 {
+    font-family: 'BBH Sans Bogle', Verdana, Tahoma, sans-serif;
+    color: #a2b2e9; /* Título color azul pastel */
+    font-size: 22px;
+    margin-bottom: 15px;
 }
 
+.footer-col p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* --- ESTILOS DE REDES SOCIALES --- */
+.footer-social-link {
+    display: flex; 
+    align-items: center;
+    text-decoration: none;
+    color: #4b0082; 
+    margin-bottom: 16px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.footer-social-link:hover {
+    color: #f799d0; 
+}
+/* Estilo del icono SVG */
+.social-icon {
+    width: 30px; /* Tamaño del icono SVG */
+    height: 30px;
+    fill: currentColor; /* El color del SVG será el mismo que el del texto (.footer-social-link) */
+    margin-right: 10px;
+}
+/* Estilo del texto junto al icono */
+.social-label {
+    font-family: 'BBH Sans Bogle', Verdana, Tahoma, sans-serif;
+}
+/* --- ESTILOS DEL MAPA --- */
+.footer-mapa-container {
+
+}
+/* --- Estilos del iframe del mapa --- */
 .footer-mapa {
- width: 40%;
-}
-
-.footer-redes {
-  width: 30%;
-}
-
-.footer-redes svg {
-  width: 80px;
-  fill: azure;
+    width: 100%; 
+    display: block;
 }
 
 .copyright {
