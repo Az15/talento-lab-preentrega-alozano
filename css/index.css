@@ -10,11 +10,7 @@
 
 /*-----------------------------------------------------------------------*/
 /* header */
-body {
-  background-color: #fff0f6; 
-  color: #000000; 
-  font-size: 16px; 
-  line-height
+
 
 .menu {
   background-color: #f799d0;
@@ -284,24 +280,31 @@ input[type=email] {
 /* Medias Querys */
 
 @media only screen and (320px <= width <= 768px) {
+
+  .main{
+    background-color: mistyrose;
+  }
+  /* ------------- Footer ---------------------------------- */
   .footer {
     flex-direction: column;
     align-items: center;
   }
 
+  /* --------- Menu de navegación --------------------------- */
+
 /*Este es el contenedor del icono lo use para centrarlo, es un cuadrito para la foto redondeada*/
-  .logo-container {
-        flex-direction: column;
-        align-items: center; 
-        text-align: center;
-        padding: 3px 10px; 
-        /* HACEMOS QUE EL LOGO VUELVA A TENER SU COLOR DE FONDO ORIGINAL (pink) */
-        background-color: #f799d0; 
-    }
     
+   /*Contenedor del logo*/
+    .logo-container {
+        flex-direction: column;
+        background-color: #f799d0; 
+        border-radius: 50%;
+    }
+    /*La foto en cuestion*/
     .logo-img {
         margin-right: 0; 
-        margin-bottom: 4px; 
+        margin-bottom: 2px; 
+        border: 2px solid #a2b2e9;
         width: 50px; 
         height: 50px;
         border-radius: 50%;
@@ -336,7 +339,6 @@ input[type=email] {
     }
     
     .link {
-        /* Centrado ya no es necesario si usamos justify-content: space-around */
         text-align: center; 
         font-size: 18px; /* Tamaño de texto más pequeño para que quepa */
         padding: 0 5px; /* Pequeño padding horizontal para la legibilidad */
@@ -345,13 +347,51 @@ input[type=email] {
     .lista-links li:hover {
         border-radius: 8px; /* Mantenemos el radio para el hover */
     }
-  
-     .bienvenida{
-    padding-top: 100px; /* Ajusta este valor al tamaño REAL de tu menú */ 
-    }
 
+    /* --------- Sección de Bienvenida --------------------------- */
+     .bienvenida{
+        padding-top: 100px; /* Sigue necesitando el padding superior */
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #f2f7b0;
+    }
+    .bienvenida-content .imagen-bienvenida {
+        /* Garantiza que la imagen nunca exceda el ancho de su contenedor (.bienvenida-content) */
+        max-width: 100%; 
+        /* Mantiene la proporción para evitar que se distorsione */
+        height: auto;
+        }
+    /* --------- Sección de Productos --------------------------- */
+       .productos {
+          font-family: Montserrat, Verdana, Tahoma, sans-serif;
+          background-color: mistyrose;
+       }
+
+        .imagen-card {
+          width: auto;
+          max-width: 250px;
+          max-height: 320px;
+          height: auto;
+          border-radius: 5%;            
+        }
+        .imagen-card:hover {
+          transform: scale(1.05);
+          transition: transform 0.3s ease;          
+        }
+        .prod-item {
+          border: 1px solid pink;
+          border-radius: 8px;
+          padding: 8px;
+          text-align: center; 
+        }
+        .item-tit{
+          color: coral;
+        }
 
 }
+
+
+
 
 
 @media only screen and (768.1px <= width <= 1024px) {
@@ -359,13 +399,16 @@ input[type=email] {
     background-color: #f799d0;
   }
   .logo-img {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%; 
     border: 2px solid #a2b2e9;
 
   }
 }
+
+
+
 
 @media only screen and (1024.1px <= width <= 2048px) {
   .menu {
