@@ -108,12 +108,21 @@
   margin: 16px 0;
 }
 
-.prod-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 16px;
+.prod-container { /* Esta clase ya no está en el HTML */
+ display: flex;
+ justify-content: space-around;
+ flex-wrap: wrap;
+ gap: 16px;
+ margin-bottom: 16px;
+}
+.productos-grid {
+ display: flex; /* Aplica Flexbox al contenedor principal */
+ justify-content: center; /* Centra los items si la línea no está llena */
+ flex-wrap: wrap; /* Permite que los productos bajen de línea */
+ gap: 30px; /* Incrementa la separación entre las tarjetas para mejor vista */
+ margin-top: 20px;
+ margin-bottom: 40px;
+ padding: 0 10px;
 }
 
 .prod-item {

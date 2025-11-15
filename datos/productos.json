@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Vasos Personalizados",
+        "price": 15000.00,
+        "off": 20,
+        "description": "Vasos personalizados con lo que vos mas ames.",
+        "image": "img/productos/VasosPersonalizados.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Mimo tejido en blanco y negro",
+        "price": 10000.00,
+        "off": 30,
+        "description": "Un hermoso mimo, para darle un mimo a la persona que mas quieres. (15cm)",
+        "image": "img/productos/Mimo.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Simio Arcoiris KND Tejido",
+        "price": 18000.00,
+        "off": 15,
+        "description": "Recien traido de tu infancia, el simio favorito de numero 3 y el tuyo! (20cm)",
+        "image": "img/productos/Simio-Arcoiris.jpg"
+    },
+    {
+        "id": 4,
+        "name": "GatoBaza Tejido",
+        "price": 6000.00,
+        "off": 5,
+        "description": "Traido desde las pesadillas, mas duras de HP Lovecraft, el poderoso Gatobaza! (8cm)",
+        "image": "img/productos/gatobaza.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Tarro de galletas decorado",
+        "price": 12000.00,
+        "off": 10,
+        "description": "Tarro de galletas recien asaltado por el gato come galletas! (10cm)",
+        "image": "img/productos/Tarro-Galletas.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Chalecos Azules Duo tejidos",
+        "price": 35000.00,
+        "off": 0,
+        "description": "¿Tenes un aniamigo y queres darle un detalle, pero que vaya en juego con vos?. ¡Este es el producto ideal! (Talle a pedido)",
+        "image": "img/productos/chalecoazul-duo.jpg"
+    }
+]

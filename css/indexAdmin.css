@@ -1,0 +1,286 @@
+/* Colores de la paleta:
+   Fondo: #fffafa (Casi blanco) / #fff8e1 (Amarillo claro/Lima muy suave)
+   Principal/Acento: #ffb6c1 (Rosa claro - light pink)
+   Texto: #704242 (Marrón suave) / #333 (Gris oscuro)
+*/
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fffafa; /* Fondo muy claro */
+    display: flex;
+    min-height: 100vh; /* Asegura que el body ocupe al menos la altura de la ventana */
+}
+
+/* --- Barra Lateral (Sidebar) --- */
+.sidebar {
+    width: 220px;
+    background-color: #ffb6c1; /* Rosa claro de acento */
+    color: white;
+    padding-top: 20px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    box-shadow: 2px 0 10px rgba(255, 182, 193, 0.5); /* Sombra rosada */
+    flex-shrink: 0; /* Evita que la sidebar se encoja */
+}
+.sidebar .logo {
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: block;
+    text-decoration: none;
+    color: #704242; /* Texto marrón suave */
+}
+.sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #704242; /* Texto marrón suave */
+    display: block;
+    border-left: 5px solid transparent;
+    transition: background-color 0.3s, border-left-color 0.3s;
+}
+.sidebar a:hover, .sidebar a.active {
+    background-color: #ffe4e1; /* Rosa muy pálido para hover */
+    border-left-color: #e88697; /* Rosa más oscuro para indicar selección */
+}
+
+/* --- Contenido Principal --- */
+.content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-x: auto; /* Permite scroll horizontal si el contenido es muy ancho */
+}
+.content h1 {
+    color: #ff69b4; /* Pink fuerte para títulos */
+    border-bottom: 2px solid #ffb6c1;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Contenedores de secciones */
+.product-form, .product-list-container {
+    background-color: #fff8e1; /* Amarillo claro/Lima muy suave */
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+}
+
+/* Ocultar la sección de lista por defecto */
+.product-list-container {
+    display: none; 
+}
+
+/* --- Estilos de Formulario --- */
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #704242;
+}
+input[type="text"], input[type="number"], input[type="file"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ffb6c1;
+    border-radius: 8px;
+    box-sizing: border-box; 
+    font-size: 16px;
+    background-color: white;
+}
+button {
+    background-color: #ff69b4; /* Pink fuerte */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px; /* Botón píldora */
+    cursor: pointer;
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+    width: auto; /* Para que no ocupe todo el ancho en desktop */
+    display: inline-block; /* Para que el padding y margen funcionen correctamente */
+}
+button:hover {
+    background-color: #e88697; /* Rosa oscuro al pasar el mouse */
+    transform: translateY(-1px);
+}
+
+/* --- Estilos de Tabla (Lista de Productos) --- */
+table {
+    width: 100%;
+    border-collapse: separate; /* Para usar border-spacing y darle separación */
+    border-spacing: 0 10px; /* Separación entre filas */
+    margin-top: 15px;
+    min-width: 600px; /* Asegura un ancho mínimo para la tabla en móviles si hay muchas columnas */
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #ffb6c1;
+    color: #704242;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+tbody tr {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(255, 182, 193, 0.2);
+    border-radius: 8px; /* Borde redondeado para filas */
+}
+
+/* Estilos para botones de acción en la tabla */
+.action-btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    white-space: nowrap; /* Evita que el texto de los botones se rompa */
+}
+.btn-edit {
+    background-color: #fdf598; /* Amarillo */
+    color: #333;
+}
+.btn-delete {
+    background-color: #e79c9c; /* Rojo suave */
+    color: white;
+}
+
+/* ============================================== */
+/* === ADAPTACIÓN PARA DISPOSITIVOS MÓVILES === */
+/* ============================================== */
+
+@media (max-width: 768px) {
+    /* 1. ESTRUCTURA PRINCIPAL */
+    body {
+        flex-direction: column; /* Apila la barra lateral y el contenido */
+        /* Eliminamos el min-height: 100vh del body para evitar problemas */
+    }
+
+    /* 2. BARRA LATERAL (Ahora es una barra de navegación superior) */
+    .sidebar {
+        width: 100%; /* Ocupa todo el ancho */
+        height: auto;
+        position: relative; /* Ya no es sticky */
+        padding: 10px 0; /* Padding vertical, horizontal lo dan los enlaces */
+        box-shadow: 0 2px 10px rgba(255, 182, 193, 0.5);
+        
+        /* Uso de Flexbox para alinear los enlaces horizontalmente */
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 5px; /* Espacio entre los enlaces */
+    }
+
+    .sidebar .logo {
+        width: 100%; /* El logo ocupa todo el ancho superior y se centra */
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: 20px; 
+    }
+
+    .sidebar a {
+        flex-grow: 1; /* Los enlaces crecen para ocupar el espacio disponible */
+        text-align: center;
+        padding: 10px 5px; /* Menor padding para que quepan */
+        font-size: 14px; 
+        
+        /* Adaptación de indicadores */
+        border-left: none; 
+        border-bottom: 2px solid transparent; 
+        display: block; /* Aseguramos que ocupe el ancho asignado por flex-grow */
+    }
+    
+    .sidebar a:hover, .sidebar a.active {
+        background-color: #ffe4e1;
+        border-bottom-color: #e88697; /* Indicador inferior activo */
+        border-left-color: transparent; 
+    }
+    
+    /* 3. CONTENIDO PRINCIPAL */
+    .content {
+        padding: 15px; /* Menos padding */
+        overflow-x: hidden; /* Evitamos el scroll horizontal innecesario */
+    }
+
+    .content h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .product-form, .product-list-container {
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    /* 4. FORMULARIO Y BOTONES */
+    button {
+        width: 100%; /* Botones de formulario ocupan todo el ancho */
+        padding: 12px;
+        margin-top: 15px;
+    }
+
+    /* 5. TABLA (Conversión a Tarjetas) */
+    table {
+        min-width: 100%; /* Aseguramos que ocupe el 100% del contenedor */
+    }
+    
+    table, thead, tbody, th, td, tr {
+        display: block; 
+    }
+
+    thead tr {
+        position: absolute; /* Oculta el encabezado */
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #ffb6c1;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 0 2px 8px rgba(255, 182, 193, 0.2);
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+        min-height: 40px; /* Asegura un mínimo de altura */
+        display: flex; /* Para mejor alineación del texto/etiqueta */
+        align-items: center;
+    }
+
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px; /* Ajustado para más espacio */
+        width: 40%;
+        text-align: left;
+        font-weight: bold;
+        color: #704242;
+    }
+
+    td:last-child {
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        display: block; /* Vuelve a block para centrar los botones */
+    }
+    .action-btn {
+        margin: 5px;
+    }
+}
