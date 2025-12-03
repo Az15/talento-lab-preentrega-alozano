@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras Mágico</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/indexCarrito.css">
+</head>
+<body>
+    <!-- Asumiendo que tienes una barra de navegación que incluye el contador del carrito -->
+    <header>
+<nav class="menu">
+      <ul class="lista-links">
+        <li class="menu-logo">
+            <div class="logo-container"> <img class="logo-img" src="img/logo1.jpg" alt="logo del sitio">
+                </div>
+        </li>
+        <li>
+          <a class="link" href="Index.html#bienvenida">Inicio</a>
+        </li>
+        <li>
+          <a class="link" href="Index.html#productos">Productos</a>
+        </li>
+        <li>
+          <a class="link" href="Index.html#contacto">Contacto</a>
+        </li>
+      <a href="IndexCarrito.html" class="cart-link">
+        🛒 Carrito: 
+        <span id="cart-counter" class="cart-badge">: 0 </span>
+      </a>
+      </ul>
+
+    </nav>
+    </header>
+
+    <div class="cart-page-container">
+        <h1 class="cart-title">Revisión de tu Pedido</h1>
+        
+        <!-- Aquí se inyectarán los productos del carrito mediante JavaScript -->
+        <div id="cart-items-container">
+            <!-- Contenido del carrito (tabla) va aquí -->
+        </div>
+
+        <!-- Resumen de Totales y Botón de Checkout -->
+        <div class="cart-summary">
+            <span class="cart-total-text">Total a Pagar:</span>
+            <span id="cart-total-amount">$ 0,00</span>
+            <!-- Añado el ID para el control en JavaScript -->
+            <button id="btn-checkout" class="btn-checkout">Finalizar Compra</button>
+        </div>
+    </div>
+    
+    <!-- -------------------- POPUP DE CONFIRMACIÓN -------------------- -->
+    
+    <div id="checkout-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 id="modal-title">¡Pedido Recibido!</h2>
+            <p>Gracias por tu pedido, nos comunicaremos en breve para coordinar la entrega y el pago.</p>
+            
+            <form id="contact-form">
+                <input type="tel" id="user-phone" placeholder="Ingresa tu celular (Ej: 1123456789)" required>
+                <button type="submit" id="btn-send-contact">Enviar</button>
+            </form>
+            
+            <!-- Mensaje de confirmación/error para el envío del teléfono -->
+            <p id="submission-message" style="color: green; display: none;">¡Datos enviados con éxito! Te contactaremos.</p>
+        </div>
+    </div>
+
+    <script src="js/IndexCarrito.js"></script>
+</body>
+</html>
